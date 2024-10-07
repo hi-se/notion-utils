@@ -8,7 +8,8 @@
     "lint": "biome check",
     "lint-fix": "biome check --write",
     "type-check": "tsc --noEmit",
-    "build": "tsc"
+    "build": "tsc",
+    "prepare": "pnpm run build"
   },
   "keywords": [],
   "author": "",
