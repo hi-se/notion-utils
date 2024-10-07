@@ -1,7 +1,10 @@
 import { Schema } from "@effect/schema";
 
+import type { PageObjectResponse } from "@notionhq/client/build/src/api-endpoints.js";
 import { Color, ColorBase, TimeZone } from "./constants-schema.js";
 import { mutableStruct } from "./schema-utils.js";
+
+export type RefinedPageObjectResponse<T> = Omit<PageObjectResponse, "properties"> & { properties: T };
 
 export const DateObject = mutableStruct({
   start: Schema.String,
