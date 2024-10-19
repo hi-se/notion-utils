@@ -27,7 +27,8 @@ export const PeopleStringArray = () => Schema.compose(ResProps.People, RPT.Peopl
 
 export const DateDate = () => Schema.compose(ResProps.Date, RPT.DateToDate());
 
+export const DateDateRange = () => Schema.compose(ResProps.Date, RPT.DateToDateRange());
+
 export const UrlString = () => Schema.compose(ResProps.Url, RPT.UrlToString());
 
 export const CheckboxBoolean = () => Schema.compose(ResProps.Checkbox, RPT.CheckboxToBoolean());
-

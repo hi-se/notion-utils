@@ -95,6 +95,18 @@ export const DateToOptionDateRange = () =>
     },
   );
 
+export const DateToDateRange = () =>
+  Schema.transformOrFail(ResProps.Date, Schema.Struct({ start: Schema.DateFromSelf, end: Schema.DateFromSelf }), {
+    strict: true,
+    decode: (input, _, ast) =>
+      pipe(
+        input,
+        Retrievers.dateWithRangeOption,
+        ParseResult.fromOption(() => new ParseResult.Forbidden(ast, input, "Expected a date range but got undefined")),
+      ),
+    encode: (input, _, ast) => ParseResult.fail(new ParseResult.Forbidden(ast, input, "Encoding not supported")),
+  });
+
 export const SelectToOptionLiteral = <T>(literalsSchema: Schema.Schema<T, T>) =>
   Schema.transformOrFail(ResProps.Select, Schema.Option(literalsSchema), {
     strict: false, // NOTE: 引数の型をうまく指定できなかったのでstrictをfalseにしている
