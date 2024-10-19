@@ -1,4 +1,5 @@
 import { type Client, isFullPage } from "@notionhq/client";
+import { match, P } from "ts-pattern";
 import type {
   GetPagePropertyParameters,
   PageObjectResponse,
@@ -6,7 +7,7 @@ import type {
   QueryDatabaseParameters,
 } from "@notionhq/client/build/src/api-endpoints.js";
 import { endOfDay, format, formatISO, isSameDay, startOfDay } from "date-fns";
-import { Array, Effect, pipe } from "effect";
+import { Array, Effect, Match, pipe } from "effect";
 import type { NotionError } from "./errors.js";
 import { getPagePropertyValue, queryDatabase, search } from "./notion-api.js";
 
@@ -115,4 +116,14 @@ export function getUrlFromPageId(pageId: string, domain?: string) {
   return domain
     ? `https://www.notion.so/${domain}/${pageId.replaceAll("-", "")}`
     : `https://www.notion.so/${pageId.replaceAll("-", "")}`;
+}
+
+// NOTE: EffectのMatchでは表現が難しかったのでts-patternを使っている
+export function getPageTitleFromRetrievedPage(retrievedPage: PageObjectResponse) {
+  return match(retrievedPage.properties)
+    .with({ Name: { type: "title", title: P.select() } }, (title) => title.map(({ plain_text }) => plain_text).join(""))
+    .with({ title: { type: "title", title: P.select() } }, (title) =>
+      title.map(({ plain_text }) => plain_text).join(""),
+    )
+    .otherwise(() => "No Title");
 }
