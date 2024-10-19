@@ -43,3 +43,7 @@ export function createDateProp({ start, end, includeTime }: { start: Date; end?:
     },
   };
 }
+
+export function createStatusProp(name: string) {
+  return { status: { name } };
+}
