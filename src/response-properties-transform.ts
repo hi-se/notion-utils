@@ -45,7 +45,7 @@ export const TitleToString = () =>
   });
 
 export const RelationToStringArray = () =>
-  Schema.transformOrFail(ResProps.Relation, Schema.Array(Schema.String), {
+  Schema.transformOrFail(ResProps.Relation, Schema.Array(Schema.String).pipe(Schema.mutable), {
     strict: true,
     decode: Function.compose(Retrievers.relation, ParseResult.succeed),
     encode: (input, _, ast) => ParseResult.fail(new ParseResult.Forbidden(ast, input, "Encoding not supported")),
@@ -127,7 +127,7 @@ export const SelectToLiteral = <T>(literalsSchema: Schema.Schema<T, T>) =>
   });
 
 export const MultiSelectToLiteralArray = <T>(literalsSchema: Schema.Schema<T, T>) =>
-  Schema.transformOrFail(ResProps.MultiSelect, Schema.Array(literalsSchema), {
+  Schema.transformOrFail(ResProps.MultiSelect, Schema.Array(literalsSchema).pipe(Schema.mutable), {
     strict: false, // NOTE: 引数の型をうまく指定できなかったのでstrictをfalseにしている
     decode: Function.compose(Retrievers.multiSelect, ParseResult.succeed),
     encode: (input, _, ast) => ParseResult.fail(new ParseResult.Forbidden(ast, input, "Encoding not supported")),
@@ -153,7 +153,7 @@ export const StatusToLiteral = <T>(literalsSchema: Schema.Schema<T, T>) =>
   });
 
 export const PeopleToStringArray = () =>
-  Schema.transformOrFail(ResProps.People, Schema.Array(Schema.String), {
+  Schema.transformOrFail(ResProps.People, Schema.Array(Schema.String).pipe(Schema.mutable), {
     strict: true,
     decode: Function.compose(Retrievers.people, ParseResult.succeed),
     encode: (input, _, ast) => ParseResult.fail(new ParseResult.Forbidden(ast, input, "Encoding not supported")),
