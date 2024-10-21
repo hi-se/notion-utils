@@ -26,9 +26,11 @@ export const StatusLiteral = <T>(literalsSchema: Schema.Schema<T, T>) =>
 export const PeopleStringArray = () => Schema.compose(ResProps.People, RPT.PeopleToStringArray());
 
 export const DateDate = () => Schema.compose(ResProps.Date, RPT.DateToDate());
+export const DateOptionDate = () => Schema.compose(ResProps.Date, RPT.DateToOptionDate());
 
 export const DateDateRange = () => Schema.compose(ResProps.Date, RPT.DateToDateRange());
 
 export const UrlString = () => Schema.compose(ResProps.Url, RPT.UrlToString());
+export const UrlOptionString = () => Schema.compose(ResProps.Url, RPT.UrlToOptionString());
 
 export const CheckboxBoolean = () => Schema.compose(ResProps.Checkbox, RPT.CheckboxToBoolean());
