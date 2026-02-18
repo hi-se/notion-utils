@@ -4,12 +4,12 @@ import type {
   GetPagePropertyParameters,
   PageObjectResponse,
   PropertyItemObjectResponse,
-  QueryDatabaseParameters,
+  QueryDataSourceParameters,
 } from "@notionhq/client/build/src/api-endpoints.js";
 import { endOfDay, format, formatISO, isSameDay, startOfDay } from "date-fns";
 import { Array, Effect, Match, pipe } from "effect";
 import type { NotionError } from "./errors.js";
-import { getPagePropertyValue, queryDatabase, search } from "./notion-api.js";
+import { getPagePropertyValue, queryDataSource, search } from "./notion-api.js";
 
 export function getPagePropertyValueAll(
   notion: Client,
@@ -36,17 +36,17 @@ export function getPagePropertyValueAll(
   });
 }
 
-export function queryDatabaseAll(
+export function queryDataSourceAll(
   notionClient: Client,
-  query: QueryDatabaseParameters,
+  query: QueryDataSourceParameters,
 ): Effect.Effect<PageObjectResponse[], NotionError> {
   return pipe(
-    queryDatabase(notionClient, query),
+    queryDataSource(notionClient, query),
     Effect.flatMap((res) => {
       const data = res.results.filter(isFullPage);
       return res.next_cursor
         ? pipe(
-            queryDatabaseAll(notionClient, { ...query, start_cursor: res.next_cursor }),
+            queryDataSourceAll(notionClient, { ...query, start_cursor: res.next_cursor }),
             Effect.map((nextData) => [...data, ...nextData]),
           )
         : Effect.succeed(data);
@@ -59,8 +59,8 @@ export function getEditedPagesFromDataBaseByDate(
   databaseId: string,
   date: Date,
 ): Effect.Effect<PageObjectResponse[], NotionError> {
-  return queryDatabaseAll(notion, {
-    database_id: databaseId,
+  return queryDataSourceAll(notion, {
+    data_source_id: databaseId,
     filter: {
       and: [
         {

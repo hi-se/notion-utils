@@ -4,14 +4,14 @@ import type {
   AppendBlockChildrenResponse,
   CreatePageParameters,
   CreatePageResponse,
-  DatabaseObjectResponse,
+  DataSourceObjectResponse,
   GetPagePropertyParameters,
   GetPagePropertyResponse,
   PageObjectResponse,
-  PartialDatabaseObjectResponse,
+  PartialDataSourceObjectResponse,
   PartialPageObjectResponse,
-  QueryDatabaseParameters,
-  QueryDatabaseResponse,
+QueryDataSourceParameters,
+  QueryDataSourceResponse,
   SearchParameters,
   UpdatePageParameters,
   UpdatePageResponse,
@@ -29,12 +29,12 @@ export function search(
   }).pipe(Effect.map((res) => res.results.filter(isFullPage)));
 }
 
-export function queryDatabase(
+export function queryDataSource(
   notion: Client,
-  query: QueryDatabaseParameters,
-): Effect.Effect<QueryDatabaseResponse, NotionError> {
+  query: QueryDataSourceParameters,
+): Effect.Effect<QueryDataSourceResponse, NotionError> {
   return Effect.tryPromise({
-    try: () => notion.databases.query(query),
+    try: () => notion.dataSources.query(query),
     catch: (e) => new NotionError({ message: `Failed to query database in Notion: ${e}` }),
   });
 }
@@ -74,7 +74,7 @@ export function getPagePropertyValue(
 }
 
 export function isFullPage(
-  page: PageObjectResponse | PartialPageObjectResponse | PartialDatabaseObjectResponse | DatabaseObjectResponse,
+  page: PageObjectResponse | PartialPageObjectResponse | PartialDataSourceObjectResponse | DataSourceObjectResponse,
 ): page is PageObjectResponse {
   return pipe(
     Match.value(page),
