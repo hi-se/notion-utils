@@ -1,4 +1,4 @@
-import { Schema } from "@effect/schema";
+import { Schema } from "effect";
 
 import type { PageObjectResponse } from "@notionhq/client/build/src/api-endpoints.js";
 import { Color, ColorBase, TimeZone } from "./constants-schema.js";

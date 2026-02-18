@@ -1,4 +1,4 @@
-import { Schema } from "@effect/schema";
+import { Schema } from "effect";
 
 import { BotUser, DateObject, PartialUser, PersonUser, RichTextItemRequest, SelectObject } from "./common-schema.js";
 import { TimeZone } from "./constants-schema.js";

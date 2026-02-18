@@ -1,4 +1,4 @@
-import { Schema } from "@effect/schema";
+import { Schema } from "effect";
 // biome-ignore lint/style/noNamespaceImport: <explanation>
 import * as ResProps from "./response-properties-schema.js";
 // biome-ignore lint/style/noNamespaceImport: <explanation>

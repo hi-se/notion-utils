@@ -1,4 +1,4 @@
-import { ParseResult, Schema } from "@effect/schema";
+import { ParseResult, Schema } from "effect";
 
 import { Function, pipe } from "effect";
 // biome-ignore lint/style/noNamespaceImport: <explanation>
