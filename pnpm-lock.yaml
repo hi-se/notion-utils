@@ -1,0 +1,170 @@
+lockfileVersion: '9.0'
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
+importers:
+
+  .:
+    dependencies:
+      '@notionhq/client':
+        specifier: ^5.9.0
+        version: 5.9.0
+      date-fns:
+        specifier: ^4.1.0
+        version: 4.1.0
+      effect:
+        specifier: ^3.19.18
+        version: 3.19.18
+      ts-pattern:
+        specifier: ^5.9.0
+        version: 5.9.0
+    devDependencies:
+      '@biomejs/biome':
+        specifier: 2.4.2
+        version: 2.4.2
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
+packages:
+
+  '@biomejs/biome@2.4.2':
+    resolution: {integrity: sha512-vVE/FqLxNLbvYnFDYg3Xfrh1UdFhmPT5i+yPT9GE2nTUgI4rkqo5krw5wK19YHBd7aE7J6r91RRmb8RWwkjy6w==}
+    engines: {node: '>=14.21.3'}
+    hasBin: true
+
+  '@biomejs/cli-darwin-arm64@2.4.2':
+    resolution: {integrity: sha512-3pEcKCP/1POKyaZZhXcxFl3+d9njmeAihZ17k8lL/1vk+6e0Cbf0yPzKItFiT+5Yh6TQA4uKvnlqe0oVZwRxCA==}
+    engines: {node: '>=14.21.3'}
+    cpu: [arm64]
+    os: [darwin]
+
+  '@biomejs/cli-darwin-x64@2.4.2':
+    resolution: {integrity: sha512-P7hK1jLVny+0R9UwyGcECxO6sjETxfPyBm/1dmFjnDOHgdDPjPqozByunrwh4xPKld8sxOr5eAsSqal5uKgeBg==}
+    engines: {node: '>=14.21.3'}
+    cpu: [x64]
+    os: [darwin]
+
+  '@biomejs/cli-linux-arm64-musl@2.4.2':
+    resolution: {integrity: sha512-/x04YK9+7erw6tYEcJv9WXoBHcULI/wMOvNdAyE9S3JStZZ9yJyV67sWAI+90UHuDo/BDhq0d96LDqGlSVv7WA==}
+    engines: {node: '>=14.21.3'}
+    cpu: [arm64]
+    os: [linux]
+
+  '@biomejs/cli-linux-arm64@2.4.2':
+    resolution: {integrity: sha512-DI3Mi7GT2zYNgUTDEbSjl3e1KhoP76OjQdm8JpvZYZWtVDRyLd3w8llSr2TWk1z+U3P44kUBWY3X7H9MD1/DGQ==}
+    engines: {node: '>=14.21.3'}
+    cpu: [arm64]
+    os: [linux]
+
+  '@biomejs/cli-linux-x64-musl@2.4.2':
+    resolution: {integrity: sha512-wbBmTkeAoAYbOQ33f6sfKG7pcRSydQiF+dTYOBjJsnXO2mWEOQHllKlC2YVnedqZFERp2WZhFUoO7TNRwnwEHQ==}
+    engines: {node: '>=14.21.3'}
+    cpu: [x64]
+    os: [linux]
+
+  '@biomejs/cli-linux-x64@2.4.2':
+    resolution: {integrity: sha512-GK2ErnrKpWFigYP68cXiCHK4RTL4IUWhK92AFS3U28X/nuAL5+hTuy6hyobc8JZRSt+upXt1nXChK+tuHHx4mA==}
+    engines: {node: '>=14.21.3'}
+    cpu: [x64]
+    os: [linux]
+
+  '@biomejs/cli-win32-arm64@2.4.2':
+    resolution: {integrity: sha512-k2uqwLYrNNxnaoiW3RJxoMGnbKda8FuCmtYG3cOtVljs3CzWxaTR+AoXwKGHscC9thax9R4kOrtWqWN0+KdPTw==}
+    engines: {node: '>=14.21.3'}
+    cpu: [arm64]
+    os: [win32]
+
+  '@biomejs/cli-win32-x64@2.4.2':
+    resolution: {integrity: sha512-9ma7C4g8Sq3cBlRJD2yrsHXB1mnnEBdpy7PhvFrylQWQb4PoyCmPucdX7frvsSBQuFtIiKCrolPl/8tCZrKvgQ==}
+    engines: {node: '>=14.21.3'}
+    cpu: [x64]
+    os: [win32]
+
+  '@notionhq/client@5.9.0':
+    resolution: {integrity: sha512-TvAVMfwtVv61hsPrRfB9ehgzSjX6DaAi1ZRAnpg8xFjzaXhzhEfbO0PhBRm3ecSv1azDuO2kBuyQHh2/z7G4YQ==}
+    engines: {node: '>=18'}
+
+  '@standard-schema/spec@1.1.0':
+    resolution: {integrity: sha512-l2aFy5jALhniG5HgqrD6jXLi/rUWrKvqN/qJx6yoJsgKhblVd+iqqU4RCXavm/jPityDo5TCvKMnpjKnOriy0w==}
+
+  date-fns@4.1.0:
+    resolution: {integrity: sha512-Ukq0owbQXxa/U3EGtsdVBkR1w7KOQ5gIBqdH2hkvknzZPYvBxb/aa6E8L7tmjFtkwZBu3UXBbjIgPo/Ez4xaNg==}
+
+  effect@3.19.18:
+    resolution: {integrity: sha512-KlbNuYzzwpOpnpshIhjCaqweQkthAT1oVG61Z2wIHqo6Sb6n/+pgzFXyTvsLyxcx5Cg3aWaQXa0XQHMuzdVW4A==}
+
+  fast-check@3.23.2:
+    resolution: {integrity: sha512-h5+1OzzfCC3Ef7VbtKdcv7zsstUQwUDlYpUTvjeUsJAssPgLn7QzbboPtL5ro04Mq0rPOsMzl7q5hIbRs2wD1A==}
+    engines: {node: '>=8.0.0'}
+
+  pure-rand@6.1.0:
+    resolution: {integrity: sha512-bVWawvoZoBYpp6yIoQtQXHZjmz35RSVHnUOTefl8Vcjr8snTPY1wnpSPMWekcFwbxI6gtmT7rSYPFvz71ldiOA==}
+
+  ts-pattern@5.9.0:
+    resolution: {integrity: sha512-6s5V71mX8qBUmlgbrfL33xDUwO0fq48rxAu2LBE11WBeGdpCPOsXksQbZJHvHwhrd3QjUusd3mAOM5Gg0mFBLg==}
+
+  typescript@5.9.3:
+    resolution: {integrity: sha512-jl1vZzPDinLr9eUt3J/t7V6FgNEw9QjvBPdysz9KfQDD41fQrC2Y4vKQdiaUpFT4bXlb1RHhLpp8wtm6M5TgSw==}
+    engines: {node: '>=14.17'}
+    hasBin: true
+
+snapshots:
+
+  '@biomejs/biome@2.4.2':
+    optionalDependencies:
+      '@biomejs/cli-darwin-arm64': 2.4.2
+      '@biomejs/cli-darwin-x64': 2.4.2
+      '@biomejs/cli-linux-arm64': 2.4.2
+      '@biomejs/cli-linux-arm64-musl': 2.4.2
+      '@biomejs/cli-linux-x64': 2.4.2
+      '@biomejs/cli-linux-x64-musl': 2.4.2
+      '@biomejs/cli-win32-arm64': 2.4.2
+      '@biomejs/cli-win32-x64': 2.4.2
+
+  '@biomejs/cli-darwin-arm64@2.4.2':
+    optional: true
+
+  '@biomejs/cli-darwin-x64@2.4.2':
+    optional: true
+
+  '@biomejs/cli-linux-arm64-musl@2.4.2':
+    optional: true
+
+  '@biomejs/cli-linux-arm64@2.4.2':
+    optional: true
+
+  '@biomejs/cli-linux-x64-musl@2.4.2':
+    optional: true
+
+  '@biomejs/cli-linux-x64@2.4.2':
+    optional: true
+
+  '@biomejs/cli-win32-arm64@2.4.2':
+    optional: true
+
+  '@biomejs/cli-win32-x64@2.4.2':
+    optional: true
+
+  '@notionhq/client@5.9.0': {}
+
+  '@standard-schema/spec@1.1.0': {}
+
+  date-fns@4.1.0: {}
+
+  effect@3.19.18:
+    dependencies:
+      '@standard-schema/spec': 1.1.0
+      fast-check: 3.23.2
+
+  fast-check@3.23.2:
+    dependencies:
+      pure-rand: 6.1.0
+
+  pure-rand@6.1.0: {}
+
+  ts-pattern@5.9.0: {}
+
+  typescript@5.9.3: {}

@@ -1,0 +1,27 @@
+{
+  "name": "@hi-se/notion-utils",
+  "version": "0.1.0",
+  "description": "",
+  "main": "src/index.ts",
+  "type": "module",
+  "scripts": {
+    "lint": "biome check",
+    "lint-fix": "biome check --write",
+    "type-check": "tsc --noEmit",
+    "build": "tsc",
+    "prepare": "pnpm run build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "@notionhq/client": "^5.9.0",
+    "date-fns": "^4.1.0",
+    "effect": "^3.19.18",
+    "ts-pattern": "^5.9.0"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.4.2",
+    "typescript": "^5.9.3"
+  }
+}
